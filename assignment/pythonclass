@@ -1,0 +1,86 @@
+def studentProfile():
+    name = input('Enter your name:')
+    age = input('Enter your age:')
+
+    print(f'Student name is {name}, student is {age} years old')
+studentProfile()
+
+def personProfile(name, age, location):
+    print(f'student name is {name}')
+    print(f'Student name is {age}')
+    print(f'student lives at {location}')
+personProfile('Bukola', 16, 'Ibadan')
+personProfile('Samuel', 87, 'Lagos')
+
+'''
+OOP object Oriented Programming
+Python Class/Object
+
+Human Being
+Attribute, name, age, gendr, hair-colour, height, weight, profession...
+Method/ Action - running, eating, sing...
+
+Car
+Attribute- colour, name, model, type, sped, manufacturer, manufacturing_date
+Action -car-type, honk,
+
+School
+Attribute - name. location, student, Teachers,
+Method - teach,
+'''
+
+class Car():
+    def __init__ (self, name, model, max_speed, colour, manufacturer):
+        self.name = name
+        self.model = model
+        self.max_speed = max_speed
+        self.colour = colour
+        self.manufacturer = manufacturer
+
+    def car_type(self):
+        '''
+        speed < 100 = normal car
+        speed ( 100 - 150) = mordern car
+        speed (151 - 200) = exoctic car
+        speed ( 200- 250) = muscle car
+        speed (250 - 300) = sport car
+        speed => 301 = super car
+
+        ''' 
+
+        if self.max_speed >= 301:
+            print(f'The {self.name.capitalize()} car is a super car')
+        elif self.max_speed >= 250:
+            print(f'The {self.name.capitalize()} car is a sport car')
+        elif self.max_speed >= 200:
+            print(f'The {self.name.capitalize()} car is a muscle car')
+        elif self.max_speed >= 151:
+            print(f'The {self.name.capitalize()} car is a exoctic car')
+        elif self.max_speed >= 100:
+            print(f'The {self.name.capitalize()} car is a mordern car')
+        else:
+            print('The', self.namecapitalize(), 'car is a normal car')
+
+car1 = Car(
+        name='Toyota',
+        model='Camry',
+        max_speed=200,
+        colour='Burgundy greenish yellow',
+        manufacturer=''
+    )
+car2 = Car(
+    name='Honda',
+    model='Civic',
+    max_speed=80,
+    colour='Burgundy greenish yellow'
+    manufacturer='Japan'
+)
+print(car2.name)
+print(car2.car_type)
+studentFile = open('student_list.txt', 'r')
+print(studentFile)
+
+import student_list
+from student_list import students
+print(students)
+
